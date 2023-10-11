@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "C6uzJ33D8++n+4oaiCYYKIjSlNDDRTOohqGt3wTg+43jT7DOI3rjiYcvl+VJbljjCIzMbi0AhQPIgiQJz534zg==",
+  "dgSpecHash": "7PdJ0dSFEWRjTM2jRDoE4S/37UIPni0RebcM+sXlnUpf+h8wVRFS+bWLBIXRxilmTMh/j35WYW7R25wDp1OdTQ==",
   "success": true,
   "projectFilePath": "/home/david/new-weather-app/server/server.csproj",
   "expectedPackageFiles": [

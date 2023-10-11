@@ -35,5 +35,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-
-//Please explain all the code in Program.cs

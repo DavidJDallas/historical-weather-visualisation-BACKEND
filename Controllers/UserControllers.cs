@@ -7,16 +7,16 @@ namespace WeatherAPI.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 //UserController: ControllerBase means that UserController inherits from ControllerBase. The ControllerBase class provides methods and properties useful in a controller context for an API. 
-public class UserController : ControllerBase
+public class UsersController : ControllerBase
 {
+    //private means this can only be access within this class. The readonly modifier allows the field to be assigned in the constructor and nowhere else.
     private readonly UsersService _userService;
     //Private readonly field that will hold a reference to an instance of UserService. 
 
-    public UserController(UsersService userService) => _userService = userService;
+    public UsersController(UsersService userService) => _userService = userService;
 
     [HttpGet]
-    public async Task<List<User>> Get(){
-        Console.WriteLine("Get request received");
+    public async Task<List<User>> Get(){        
         return await _userService.GetAsync();
     }
     
@@ -30,20 +30,18 @@ public class UserController : ControllerBase
         {
             return NotFound();
         }
-        Console.WriteLine(user);
-        Console.WriteLine("User found");
 
         return user;
         
     }
 
-    // [HttpPost]
-    // public async Task<IActionResult> Post(Book newBook)
-    // {
-    //     await _booksService.CreateAsync(newBook);
+    [HttpPost]
+    public async Task<IActionResult> Post(User newUser)
+    {
+        await _userService.CreateAsync(newUser);
 
-    //     return CreatedAtAction(nameof(Get), new { id = newBook.Id }, newBook);
-    // }
+        return CreatedAtAction(nameof(Get), new { id = newUser.Id }, newUser);
+    }
 
     // [HttpPut("{id:length(24)}")]
     // public async Task<IActionResult> Update(string id, Book updatedBook)
