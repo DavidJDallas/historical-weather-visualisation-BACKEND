@@ -17,7 +17,7 @@ builder.Services.Configure<WeatherServerDatabaseSettings>(
 //Binding here means that the IConfiguration object (builder.Configuration) will have a WeatherServerDatabase property with the same properties as the appsettings.json file's WeatherServerDatabase section.
 
 builder.Services.AddSingleton<UsersService>();
-//Above registers a BooksService instance with the Dependency Injection container.
+//Above registers a UsersService instance with the Dependency Injection container.
 
 var app = builder.Build();
 

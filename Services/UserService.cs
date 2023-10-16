@@ -25,6 +25,7 @@ public class UsersService
             weatherServiceDatabaseSettings.Value.UsersCollectionName);
     }
 
+    //A task represents some asynchronous operation and is part of the Task Parallel library, which is a set of APIs for running tasks asynchronously and in parallel. 
     public async Task<List<User>> GetAsync(){       
         return await _usersCollection.Find(_ => true).ToListAsync();
     }

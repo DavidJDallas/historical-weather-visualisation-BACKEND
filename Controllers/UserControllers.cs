@@ -13,7 +13,10 @@ public class UsersController : ControllerBase
     private readonly UsersService _userService;
     //Private readonly field that will hold a reference to an instance of UserService. 
 
-    public UsersController(UsersService userService) => _userService = userService;
+    //Below is the constructor of UsersController. Takes a parameter of type UsersService. This service - UsersService - will be injected by the ASP.NET Core framework, and it's used to interact with the user-related data and operations. 
+    public UsersController(UsersService userService){
+        _userService = userService;
+    }
 
     [HttpGet]
     public async Task<List<User>> Get(){        
@@ -30,16 +33,14 @@ public class UsersController : ControllerBase
         {
             return NotFound();
         }
-
-        return user;
-        
+        return user;        
     }
 
     [HttpPost]
     public async Task<IActionResult> Post(User newUser)
     {
         await _userService.CreateAsync(newUser);
-
+        
         return CreatedAtAction(nameof(Get), new { id = newUser.Id }, newUser);
     }
 
