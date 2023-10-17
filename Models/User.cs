@@ -22,8 +22,9 @@ public class User
     //the = null syntax automatically sets this variable to null. The ! operator is used in the context of nullable reference types. It tells the compiler 'dont worry, I know what I'm doing' - the compiler will by default warn you if you try to assign null. Reference types are non-nullable by default. 
     public string Name { get; set; } = null!;
     public string UserName { get; set; }
-    public string email { get; set; } = null!;
+    public string Email { get; set; } = null!;
+    public string Password {get; set;} 
 
-    public bool verified { get; set; } = false;
+    public bool Verified { get; set; } = false;
 
 }

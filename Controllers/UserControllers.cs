@@ -1,6 +1,7 @@
 using WeatherAPI.Models;
 using WeatherAPI.Services;
 using Microsoft.AspNetCore.Mvc;
+using WeatherAPI.PasswordHasher;
 
 namespace WeatherAPI.Controllers;
 
@@ -11,6 +12,7 @@ public class UsersController : ControllerBase
 {
     //private means this can only be access within this class. The readonly modifier allows the field to be assigned in the constructor and nowhere else.
     private readonly UsersService _userService;
+    private readonly IPasswordHasher _passwordHasher;
     //Private readonly field that will hold a reference to an instance of UserService. 
 
     //Below is the constructor of UsersController. Takes a parameter of type UsersService. This service - UsersService - will be injected by the ASP.NET Core framework, and it's used to interact with the user-related data and operations. 
@@ -18,8 +20,9 @@ public class UsersController : ControllerBase
     // Injected refers to the process of providing an instance of a class or service to a component, rather than the component creating the instance itself. 
 
     //DI is a design pattern used to achieve loose coupling between different parts of an application, making it more maintanable and testable. 
-    public UsersController(UsersService userService){
+    public UsersController(UsersService userService, IPasswordHasher passwordHasher){
         _userService = userService;
+        _passwordHasher = passwordHasher;
     }
 
     [HttpGet]
@@ -32,6 +35,7 @@ public class UsersController : ControllerBase
     [HttpGet("{id:length(24)}")]
     public async Task<ActionResult<User>> Get(string id)
     {
+        //This refers to get
         var user = await _userService.GetAsync(id);
 
         if (user is null)
@@ -44,7 +48,16 @@ public class UsersController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Post(User newUser)
     {
+
+        //Calls the CreateAsync method in the UsersService Class. 
+
+        string encryptedPass = _passwordHasher.Hash(newUser.Password);
+
+        Console.WriteLine(encryptedPass);
+
         await _userService.CreateAsync(newUser);
+
+
         
         return CreatedAtAction(nameof(Get), new { id = newUser.Id }, newUser);
     }
