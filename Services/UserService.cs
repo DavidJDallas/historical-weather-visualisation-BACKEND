@@ -10,10 +10,9 @@ public class UsersService
 {
     private readonly IMongoCollection<User> _usersCollection;
 
-    public UsersService(
-        //What does IOptions do?
-        
-        IOptions<WeatherAPI.Models.WeatherServerDatabaseSettings> weatherServiceDatabaseSettings)
+    public UsersService(     
+        IOptions<WeatherAPI.Models.WeatherServerDatabaseSettings> weatherServiceDatabaseSettings
+        )
     {
         var mongoClient = new MongoClient(
             weatherServiceDatabaseSettings.Value.ConnectionString);

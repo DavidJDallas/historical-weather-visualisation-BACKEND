@@ -14,12 +14,17 @@ public class UsersController : ControllerBase
     //Private readonly field that will hold a reference to an instance of UserService. 
 
     //Below is the constructor of UsersController. Takes a parameter of type UsersService. This service - UsersService - will be injected by the ASP.NET Core framework, and it's used to interact with the user-related data and operations. 
+
+    // Injected refers to the process of providing an instance of a class or service to a component, rather than the component creating the instance itself. 
+
+    //DI is a design pattern used to achieve loose coupling between different parts of an application, making it more maintanable and testable. 
     public UsersController(UsersService userService){
         _userService = userService;
     }
 
     [HttpGet]
-    public async Task<List<User>> Get(){        
+    public async Task<List<User>> Get(){ 
+        //This refers to getAysnc method in the UsersService class.        
         return await _userService.GetAsync();
     }
     
