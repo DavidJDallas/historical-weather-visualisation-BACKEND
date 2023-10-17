@@ -52,8 +52,14 @@ public class UsersController : ControllerBase
         //Calls the CreateAsync method in the UsersService Class. 
 
         string encryptedPass = _passwordHasher.Hash(newUser.Password);
+        var result = _passwordHasher.Verify(encryptedPass, newUser.Password);
 
-        Console.WriteLine(encryptedPass);
+        newUser.Password = encryptedPass;
+
+        Console.WriteLine(newUser.Password);
+        Console.WriteLine(result);
+
+
 
         await _userService.CreateAsync(newUser);
 
@@ -79,18 +85,12 @@ public class UsersController : ControllerBase
     //     return NoContent();
     // }
 
-    // [HttpDelete("{id:length(24)}")]
-    // public async Task<IActionResult> Delete(string id)
-    // {
-    //     var book = await _booksService.GetAsync(id);
+    [HttpDelete]
+    public async Task<IActionResult> Delete()
+    {     
 
-    //     if (book is null)
-    //     {
-    //         return NotFound();
-    //     }
+        await _userService.RemoveAllAsync();
 
-    //     await _booksService.RemoveAsync(id);
-
-    //     return NoContent();
-    // }
+        return NoContent();
+    }
 }
