@@ -32,38 +32,45 @@ public class UsersController : ControllerBase
     }
     
 
-    [HttpGet("{id:length(24)}")]
-    public async Task<ActionResult<User>> Get(string id)
-    {
-        //This refers to get
-        var user = await _userService.GetAsync(id);
+    // [HttpGet("{id:length(24)}")]
+    // public async Task<ActionResult<User>> Get(string id)
+    // {
+    //     //This refers to get
+    //     var user = await _userService.GetAsync(id);
 
-        if (user is null)
-        {
-            return NotFound();
-        }
-        return user;        
-    }
+    //     if (user is null)
+    //     {
+    //         return NotFound();
+    //     }
+    //     return user;        
+    // }
 
     [HttpPost]
     public async Task<IActionResult> Post(User newUser)
     {
 
+        
         //Calls the CreateAsync method in the UsersService Class. 
 
         string encryptedPass = _passwordHasher.Hash(newUser.Password);
-        var result = _passwordHasher.Verify(encryptedPass, newUser.Password);
+
 
         newUser.Password = encryptedPass;
 
-        Console.WriteLine(newUser.Password);
-        Console.WriteLine(result);
+        //Awaits response from DB.
+        var createdUser = await _userService.CreateAsync(newUser);
 
-
-
-        await _userService.CreateAsync(newUser);
-
-
+        if(createdUser == null)
+        {
+            return new JsonResult(new
+            {
+                error = "invalid data",
+                details = "more specific details",
+            })
+            {
+                StatusCode = (400)HttpStatusCode
+            }
+        }
         
         return CreatedAtAction(nameof(Get), new { id = newUser.Id }, newUser);
     }
@@ -84,6 +91,12 @@ public class UsersController : ControllerBase
 
     //     return NoContent();
     // }
+
+    [HttpPost]
+    public async Task<IActionResult> Post()
+    {
+
+    }
 
     [HttpDelete]
     public async Task<IActionResult> Delete()
