@@ -5,6 +5,10 @@ using WeatherAPI.PasswordHasher;
 
 namespace WeatherAPI.Controllers;
 
+
+
+
+
 [ApiController]
 [Route("api/[controller]")]
 //UserController: ControllerBase means that UserController inherits from ControllerBase. The ControllerBase class provides methods and properties useful in a controller context for an API. 
@@ -48,7 +52,6 @@ public class UsersController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Post(User newUser)
     {
-
         
         //Calls the CreateAsync method in the UsersService Class. 
 
