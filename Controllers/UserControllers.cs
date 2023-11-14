@@ -36,18 +36,7 @@ public class UsersController : ControllerBase
     }
     
 
-    // [HttpGet("{id:length(24)}")]
-    // public async Task<ActionResult<User>> Get(string id)
-    // {
-    //     //This refers to get
-    //     var user = await _userService.GetAsync(id);
 
-    //     if (user is null)
-    //     {
-    //         return NotFound();
-    //     }
-    //     return user;        
-    // }
 
     [HttpPost]
     public async Task<IActionResult> Post(User newUser)
@@ -78,27 +67,12 @@ public class UsersController : ControllerBase
         return CreatedAtAction(nameof(Get), new { id = newUser.Id }, newUser);
     }
 
-    // [HttpPut("{id:length(24)}")]
-    // public async Task<IActionResult> Update(string id, Book updatedBook)
-    // {
-    //     var book = await _booksService.GetAsync(id);
 
-    //     if (book is null)
-    //     {
-    //         return NotFound();
-    //     }
-
-    //     updatedBook.Id = book.Id;
-
-    //     await _booksService.UpdateAsync(id, updatedBook);
-
-    //     return NoContent();
-    // }
 
     [HttpPost]
     public async Task<IActionResult> Post()
     {
-
+        
     }
 
     [HttpDelete]
