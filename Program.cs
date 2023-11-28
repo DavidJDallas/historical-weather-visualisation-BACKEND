@@ -1,6 +1,5 @@
 using WeatherAPI.Models;
 using WeatherAPI.Services;
-using WeatherAPI.PasswordHasher;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -86,3 +86,4 @@
 /home/david/new-weather-app/server/obj/Debug/net7.0/server.pdb
 /home/david/new-weather-app/server/obj/Debug/net7.0/server.genruntimeconfig.cache
 /home/david/new-weather-app/server/obj/Debug/net7.0/ref/server.dll
+/home/david/new-weather-app/server/obj/Debug/net7.0/server.sourcelink.json
