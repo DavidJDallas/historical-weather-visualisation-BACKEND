@@ -1,5 +1,7 @@
+using DataStoreApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection("WeatherServerDatabase"));
 
 // Add services to the container.
 
