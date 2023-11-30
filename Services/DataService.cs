@@ -29,7 +29,7 @@ public class DataService
         _dataCollection = mongoDatabase.GetCollection<Data>(databaseSettings.Value.DataCollectionName);
     }
 
-    public async Task<List<Data>> GetAsync() => await _dataCollection.Find(_ => true).toListAsync();
+    public async Task<List<Data>> GetAsync() => await _dataCollection.Find(_ => true).ToListAsync();
 
-    
+
     }

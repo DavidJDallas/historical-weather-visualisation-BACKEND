@@ -1,7 +1,11 @@
 using DataStoreApi.Models;
+using DataStoreApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection("WeatherServerDatabase"));
+
+//Below the DataService Class is registered with depdency injection to support constructor injection in consuming classes.
+builder.Services.AddSingleton<DataService>();
 
 // Add services to the container.
 
