@@ -21,7 +21,6 @@ public class DataService
 
         var mongoDatabase = mongoClient.GetDatabase(databaseSettings.Value.DatabaseName);
 
-
         _dataCollection = mongoDatabase.GetCollection<Data>(databaseSettings.Value.DataCollectionName);
     }
 
@@ -29,6 +28,5 @@ public class DataService
 
     public async Task CreateAsync(IEnumerable<Data> newData) => await _dataCollection.InsertManyAsync(newData);
 
-  
 
     }
