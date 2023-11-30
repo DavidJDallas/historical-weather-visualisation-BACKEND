@@ -26,7 +26,7 @@ public class DataService
 
     public async Task<List<Data>> GetAsync() => await _dataCollection.Find(_ => true).ToListAsync();
 
-    public async Task CreateAsync(IEnumerable<Data> newData) => await _dataCollection.InsertManyAsync(newData);
+    public async Task CreateAsync(Data newData) => await _dataCollection.InsertOneAsync(newData);
 
 
     }

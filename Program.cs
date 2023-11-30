@@ -14,12 +14,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-
-//Directly above, the configuration instance to which the appsettings.json file's WeatherServerDatabase section binds is registered in the Dependency Injection container. 
-//Binding here means that the IConfiguration object (builder.Configuration) will have a WeatherServerDatabase property with the same properties as the appsettings.json file's WeatherServerDatabase section.
-
-//Above registers a UsersService instance with the Dependency Injection container.
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

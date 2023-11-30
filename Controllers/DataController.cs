@@ -15,10 +15,10 @@ public class DataController: ControllerBase
     public async Task<List<Data>> Get() => await _dataService.GetAsync();
 
     [HttpPost]
-    public async Task<ActionResult<Data>> Post(IEnumerable<Data> newData)
+    public async Task<ActionResult<Data>> Post(Data newData)
     {
         await _dataService.CreateAsync(newData);
-        return CreatedAtAction(nameof(Get), new {id=newData.Select(d => d.Date)}, newData);
+        return CreatedAtAction(nameof(Get), new {id=newData.Id}, newData);
     }
 
 
