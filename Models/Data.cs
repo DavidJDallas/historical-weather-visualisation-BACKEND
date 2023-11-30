@@ -9,7 +9,6 @@ public class Data
     [BsonId]
     [BsonRepresentation(BsonType.ObjectId)]
     public string? Id { get; set; }   
-    
     public string Date {get; set;}
     public double Rain {get; set;}
     public double TemperatureMax {get; set;}

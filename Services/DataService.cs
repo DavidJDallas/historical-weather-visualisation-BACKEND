@@ -22,10 +22,6 @@ public class DataService
         var mongoDatabase = mongoClient.GetDatabase(databaseSettings.Value.DatabaseName);
 
 
-        Console.WriteLine(mongoClient);
-        Console.WriteLine(mongoDatabase);
-        Console.WriteLine(databaseSettings);
-
         _dataCollection = mongoDatabase.GetCollection<Data>(databaseSettings.Value.DataCollectionName);
     }
 
