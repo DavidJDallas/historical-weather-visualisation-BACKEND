@@ -13,5 +13,23 @@ namespace DataStoreApi.Services;
 
 public class DataService
 {
-    private readonly IMongo
-}
+    private readonly IMongoCollection<Data> _dataCollection;
+
+    public DataService(IOptions<DatabaseSettings> databaseSettings)
+    {
+        var mongoClient = new MongoClient(databaseSettings.Value.ConnectionString);
+
+        var mongoDatabase = mongoClient.GetDatabase(databaseSettings.Value.DatabaseName);
+
+
+        Console.WriteLine(mongoClient);
+        Console.WriteLine(mongoDatabase);
+        Console.WriteLine(databaseSettings);
+
+        _dataCollection = mongoDatabase.GetCollection<Data>(databaseSettings.Value.DataCollectionName);
+    }
+
+    public async Task<List<Data>> GetAsync() => await _dataCollection.Find(_ => true).toListAsync();
+
+    
+    }
