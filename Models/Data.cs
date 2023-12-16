@@ -11,7 +11,6 @@ public class Data
     public string? Id { get; set; }   
     public double[] Rain {get; set;}
     public double[] TemperatureMax {get; set;}
-
     public string[] Time {get; set;}
 
 }

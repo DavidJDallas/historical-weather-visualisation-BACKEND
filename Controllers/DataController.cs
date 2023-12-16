@@ -21,4 +21,19 @@ public class DataController: ControllerBase
         await _dataService.CreateAsync(newData);
         return CreatedAtAction(nameof(Get), new {id=newData.Id}, newData);
     }
+
+    [HttpDelete]
+    public async Task<IActionResult> DeleteAll()
+    {
+        try
+        {
+            await _dataService.DeleteAsync();
+            return Ok("All records deleted successfully");
+        }
+        catch(Exception ex)
+        {
+            return StatusCode(500, $"Internal server error: {ex.Message}");
+        }
+    }
+  
 }
