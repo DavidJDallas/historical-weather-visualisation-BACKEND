@@ -28,5 +28,4 @@ public class DataService
 
     public async Task CreateAsync(Data newData) => await _dataCollection.InsertOneAsync(newData);
 
-
     }
