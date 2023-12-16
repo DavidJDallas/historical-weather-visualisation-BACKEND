@@ -17,9 +17,9 @@ public class DataController: ControllerBase
     //
     [HttpPost]
     public async Task<ActionResult<Data>> Post(Data newData)
-    {
+    { 
         await _dataService.CreateAsync(newData);
-        return CreatedAtAction(nameof(Get), new {id=newData.Id}, newData);
+        return CreatedAtAction(nameof(Get), new {id = newData.Id, location=newData.Location});       
     }
 
     [HttpDelete]

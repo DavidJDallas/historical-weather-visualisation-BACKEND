@@ -13,4 +13,6 @@ public class Data
     public double[] TemperatureMax {get; set;}
     public string[] Time {get; set;}
 
+    public string Location {get; set;}
+
 }
