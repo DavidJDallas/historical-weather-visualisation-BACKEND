@@ -14,6 +14,18 @@ public class DataController: ControllerBase
     [HttpGet]
     public async Task<List<Data>> Get() => await _dataService.GetAsync();
 
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Data>> GetByIdAsync(string id)
+    {
+        var data = await _dataService.GetByIdAsync(id);
+
+        if(data == null)
+        {
+            return NotFound();
+        }
+        return Ok(data);
+    }
+
     //
     [HttpPost]
     public async Task<ActionResult<Data>> Post(Data newData)

@@ -27,6 +27,14 @@ public class DataService
 
     public async Task<List<Data>> GetAsync() => await _dataCollection.Find(_ => true).ToListAsync();
 
+    
+    public async Task<Data> GetByIdAsync(string id)
+    {
+        var filter = Builders<Data>.Filter.Eq(d => d.Id, id);
+        return await _dataCollection.Find(filter).FirstOrDefaultAsync();
+    }
+
+
     public async Task CreateAsync(Data newData) => await _dataCollection.InsertOneAsync(newData);
 
     public async Task DeleteAsync()
