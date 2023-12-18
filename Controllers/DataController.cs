@@ -14,6 +14,8 @@ namespace DataStoreApi.Controllers;
 
 //The record of what data is bound to the model, and any binding or validation errors, is stored in ControllerBase.ModelState or PageModel.ModelState. To find out if this process was successful, the app checks the ModelState.IsValid flag. 
 
+//Note also that ASP.NET MCV already handles 400 error messages automatically, so no need to do so. 
+
 [ApiController]
 [Route("api/main")]
 public class DataController: ControllerBase
@@ -39,9 +41,20 @@ public class DataController: ControllerBase
     //
     [HttpPost]
     public async Task<ActionResult<Data>> Post(Data newData)
-    { 
+    { try
+        {
+            Console.WriteLine(newData);
         await _dataService.CreateAsync(newData);
-        return CreatedAtAction(nameof(Get), new {id = newData.Id, location=newData.Location});       
+        return CreatedAtAction(nameof(Get), new {id = newData.Id, location=newData.Location});    
+
+        }
+      catch(Exception ex)
+      {
+        Console.WriteLine(ex);
+
+        return StatusCode(500);
+      }
+           
     }
 
     [HttpDelete]

@@ -40,6 +40,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+const pass = "ib7Z3xOsaHekV92a"
+
+Console.WriteLine(getEnv);
+
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
