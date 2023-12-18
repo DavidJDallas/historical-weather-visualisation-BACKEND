@@ -6,6 +6,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 
 var builder = WebApplication.CreateBuilder(args);
+
+//builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection("WeatherServerDatabase"));
+
 builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection("WeatherServerDatabase"));
 
 //Below the DataService Class is registered with depdency injection to support constructor injection in consuming classes.
@@ -40,9 +43,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-const pass = "ib7Z3xOsaHekV92a"
 
-Console.WriteLine(getEnv);
 
 
 app.UseHttpsRedirection();

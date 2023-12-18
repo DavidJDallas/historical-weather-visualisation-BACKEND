@@ -19,6 +19,7 @@ public class DataService
     public DataService(IOptions<DatabaseSettings> databaseSettings)
     {
         var mongoClient = new MongoClient(databaseSettings.Value.ConnectionString);
+        Console.WriteLine(mongoClient);
 
         var mongoDatabase = mongoClient.GetDatabase(databaseSettings.Value.DatabaseName);
 

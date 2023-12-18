@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/daviddallas/new-weather-vis/backend/historical-weather-visualisation-BACKEND/server.csproj": {}
+    "/home/david/new-weather-app/server/server.csproj": {}
   },
   "projects": {
-    "/Users/daviddallas/new-weather-vis/backend/historical-weather-visualisation-BACKEND/server.csproj": {
+    "/home/david/new-weather-app/server/server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/daviddallas/new-weather-vis/backend/historical-weather-visualisation-BACKEND/server.csproj",
+        "projectUniqueName": "/home/david/new-weather-app/server/server.csproj",
         "projectName": "server",
-        "projectPath": "/Users/daviddallas/new-weather-vis/backend/historical-weather-visualisation-BACKEND/server.csproj",
-        "packagesPath": "/Users/daviddallas/.nuget/packages/",
-        "outputPath": "/Users/daviddallas/new-weather-vis/backend/historical-weather-visualisation-BACKEND/obj/",
+        "projectPath": "/home/david/new-weather-app/server/server.csproj",
+        "packagesPath": "/home/david/.nuget/packages/",
+        "outputPath": "/home/david/new-weather-app/server/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/daviddallas/.nuget/NuGet/NuGet.Config"
+          "/home/david/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -56,7 +56,7 @@
             },
             "MongoDB.Driver": {
               "target": "Package",
-              "version": "[2.22.0, )"
+              "version": "[2.23.1, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -82,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/snap/dotnet-sdk/228/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
