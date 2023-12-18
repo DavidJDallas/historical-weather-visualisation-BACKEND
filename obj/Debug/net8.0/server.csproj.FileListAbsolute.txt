@@ -125,7 +125,6 @@
 /Users/daviddallas/new-weather-vis/backend/historical-weather-visualisation-BACKEND/obj/Debug/net8.0/server.dll
 /Users/daviddallas/new-weather-vis/backend/historical-weather-visualisation-BACKEND/obj/Debug/net8.0/refint/server.dll
 /Users/daviddallas/new-weather-vis/backend/historical-weather-visualisation-BACKEND/obj/Debug/net8.0/server.pdb
-/Users/daviddallas/new-weather-vis/backend/historical-weather-visualisation-BACKEND/bin/Debug/net8.0/appsettings.json
 /Users/daviddallas/new-weather-vis/backend/historical-weather-visualisation-BACKEND/bin/Debug/net8.0/appsettings.Development.json
 /Users/daviddallas/new-weather-vis/backend/historical-weather-visualisation-BACKEND/bin/Debug/net8.0/server
 /Users/daviddallas/new-weather-vis/backend/historical-weather-visualisation-BACKEND/bin/Debug/net8.0/server.deps.json
@@ -230,3 +229,4 @@
 /Users/daviddallas/new-weather-vis/backend/historical-weather-visualisation-BACKEND/obj/Debug/net8.0/server.csproj.CopyComplete
 /Users/daviddallas/new-weather-vis/backend/historical-weather-visualisation-BACKEND/obj/Debug/net8.0/server.genruntimeconfig.cache
 /Users/daviddallas/new-weather-vis/backend/historical-weather-visualisation-BACKEND/obj/Debug/net8.0/ref/server.dll
+/Users/daviddallas/new-weather-vis/backend/historical-weather-visualisation-BACKEND/bin/Debug/net8.0/appsettings.json

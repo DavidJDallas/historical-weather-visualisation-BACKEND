@@ -3528,19 +3528,19 @@
     ]
   },
   "packageFolders": {
-    "/home/david/.nuget/packages/": {}
+    "/Users/daviddallas/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/david/new-weather-app/server/server.csproj",
+      "projectUniqueName": "/Users/daviddallas/new-weather-vis/backend/historical-weather-visualisation-BACKEND/server.csproj",
       "projectName": "server",
-      "projectPath": "/home/david/new-weather-app/server/server.csproj",
-      "packagesPath": "/home/david/.nuget/packages/",
-      "outputPath": "/home/david/new-weather-app/server/obj/",
+      "projectPath": "/Users/daviddallas/new-weather-vis/backend/historical-weather-visualisation-BACKEND/server.csproj",
+      "packagesPath": "/Users/daviddallas/.nuget/packages/",
+      "outputPath": "/Users/daviddallas/new-weather-vis/backend/historical-weather-visualisation-BACKEND/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/david/.nuget/NuGet/NuGet.Config"
+        "/Users/daviddallas/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -3608,7 +3608,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/snap/dotnet-sdk/228/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.100/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
