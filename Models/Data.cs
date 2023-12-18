@@ -16,9 +16,3 @@ public class Data
 
 }
 
-public class TemperatureData
-{
-    [BsonId]
-    [BsonRepresentation(BsonType.ObjectId)]
-    
-}
