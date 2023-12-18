@@ -4,6 +4,16 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DataStoreApi.Controllers;
 
+//Some notes for myself on model binding
+
+//Model binding is an important process here. It involves mapping data from an HTTP request to the parameters of a controller action or to properties of a model class. It can extract data from various sources - query string params, form fields, route values, and request bodies.
+
+//Model binding uses default conventions to determine how to mach request data to parameters or properties. 
+
+//Model binding retrieves data from various sources such as route data, form fields, and query strings. It provides the data to controllers in method para
+
+//The record of what data is bound to the model, and any binding or validation errors, is stored in ControllerBase.ModelState or PageModel.ModelState. To find out if this process was successful, the app checks the ModelState.IsValid flag. 
+
 [ApiController]
 [Route("api/main")]
 public class DataController: ControllerBase
