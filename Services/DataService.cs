@@ -34,7 +34,6 @@ public class DataService
         return await _dataCollection.Find(filter).FirstOrDefaultAsync();
     }
 
-
     public async Task CreateAsync(Data newData) => await _dataCollection.InsertOneAsync(newData);
 
     public async Task DeleteAsync()
@@ -42,5 +41,4 @@ public class DataService
         var filter = Builders<Data>.Filter.Empty;
         await _dataCollection.DeleteManyAsync(filter);    
     }
-
     }

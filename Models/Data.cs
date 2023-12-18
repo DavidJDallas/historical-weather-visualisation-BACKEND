@@ -12,7 +12,13 @@ public class Data
     public double[] Rain {get; set;}
     public double[] TemperatureMax {get; set;}
     public string[] Time {get; set;}
-
     public string Location {get; set;}
 
+}
+
+public class TemperatureData
+{
+    [BsonId]
+    [BsonRepresentation(BsonType.ObjectId)]
+    
 }
