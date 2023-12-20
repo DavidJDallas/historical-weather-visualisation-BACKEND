@@ -1,2 +1,5 @@
 /appsettings.json
-/Notes
+/Notes/
+obj/
+*.nupkg
+bin/
