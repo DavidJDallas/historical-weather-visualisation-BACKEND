@@ -21,6 +21,8 @@ namespace DataStoreApi.Controllers;
 public class DataController: ControllerBase
 {
     private readonly DataService _dataService;
+
+    //Constructor to initialize _dataService
     public DataController(DataService dataservice) => _dataService = dataservice;
 
     [HttpGet]
