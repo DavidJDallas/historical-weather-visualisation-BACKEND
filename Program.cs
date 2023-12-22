@@ -4,14 +4,13 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 
-
 var builder = WebApplication.CreateBuilder(args);
 
 //builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection("WeatherServerDatabase"));
 
 builder.Services.Configure<DatabaseSettings>(builder.Configuration.GetSection("WeatherServerDatabase"));
 
-//Below the DataService Class is registered with depdency injection to support constructor injection in consuming classes.
+//Below the DataService Class is registered with dependency injection to support constructor injection in consuming classes.
 builder.Services.AddSingleton<DataService>();
 
 // Add services to the container.
@@ -42,8 +41,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
-
 
 
 app.UseHttpsRedirection();

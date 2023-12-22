@@ -41,13 +41,14 @@ public class DataController: ControllerBase
     //
     [HttpPost]
     public async Task<ActionResult<Data>> Post(Data newData)
-    { try
+    { 
+        try
         {
         await _dataService.CreateAsync(newData);
         return CreatedAtAction(nameof(Get), new {id = newData.Id, location=newData.Location});    
 
         }
-      catch(Exception ex)
+        catch(Exception ex)
       {
 
         return StatusCode(500);
