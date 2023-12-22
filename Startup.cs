@@ -7,8 +7,6 @@ public class Startup
     public Startup()
     {
         connectionString = Environment.GetEnvironmentVariable("WEATHER_SERVER_DB_CONNECTION_STRING");
-
-
     }
 
     public void ConfigureServices(IServiceCollection services)
